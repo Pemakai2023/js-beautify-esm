@@ -5,26 +5,7 @@
  * Copyright 2006, 2015 Klaus Hartl & Fagner Brack
  * Released under the MIT license
  */
-//;(function (factory) {
-//	var registeredInModuleLoader;
-//	if (typeof define === 'function' && define.amd) {
-//		define(factory);
-//		registeredInModuleLoader = true;
-//	}
-//	if (typeof exports === 'object') {
-//		module.exports = factory();
-//		registeredInModuleLoader = true;
-//	}
-//	if (!registeredInModuleLoader) {
-//		var OldCookies = window.Cookies;
-//		var api = window.Cookies = factory();
-//		api.noConflict = function () {
-//			window.Cookies = OldCookies;
-//			return api;
-//		};
-//	}
-//}(function () {
- //var registeredInModuleLoader
+
 function extend () {
 	var i = 0;
 	var result = {};
@@ -161,5 +142,3 @@ function init (converter) {
 }
 
 export default init(function () {});
-
-//}));
