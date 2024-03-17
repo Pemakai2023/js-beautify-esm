@@ -4,7 +4,7 @@
     globalThis.CodeMirror = CodeMirror
 
 import Cookies from '../libs/js.cookie.js'
-import { JavascriptObfuscator, P_A_C_K_E_R, Urlencoded, MyObfuscate, } from '../js/src/unpacker.js'
+import { JavascriptObfuscator, Packer as P_A_C_K_E_R, Urlencoded, MyObfuscate, } from '../js/src/unpacker.js'
 import * as beautifier from '../js/src/index.js'
 import SanityTest from '../js/test/sanitytest.js'
 import SanitizeTest from '../js/test/sanitytest.js'
