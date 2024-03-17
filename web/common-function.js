@@ -14,7 +14,6 @@ import { run_html_tests } from '../js/test/generated/beautify-html-tests.js'
 
 import common_style_css from './common-style.css' assert {type:'css'}
 window.document.adoptedStyleSheets = [common_style_css];
-//console.log(CodeMirror.prototype)
 
 export function getElm(attr, name){
   var all = document.getElementsByTagName('*')
@@ -370,7 +369,6 @@ function copyText() {
     console.log('copy')
     copyArea.remove();
   } else {
-    //$('#source').select();
     getId('source').focus();
     getId('source').select();
     document.execCommand('copy');
@@ -381,7 +379,6 @@ function selectAll() {
   if (the.editor) {
     the.editor.execCommand('selectAll');
   } else {
-    //$('#source').select();
     getId('source').focus();
     getId('source').select();
   }
@@ -391,7 +388,6 @@ function clearAll() {
   if (the.editor) {
     the.editor.setValue('');
   } else {
-    //$('#source').val('');
     getId('source').value = '';
   }
 }
@@ -405,7 +401,6 @@ function changeToFileContent(input) {
       if (the.editor) {
         the.editor.setValue(event.target.result);
       } else {
-        //$('#source').val(event.target.result);
         getId('source').value = event.target.result;
       }
     };
@@ -418,13 +413,10 @@ export function setPreferredColorScheme() {
   var isPreferredColorSchemeDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   if (isPreferredColorSchemeDark) {
     themeToggleBtn.checked = true;
-    //$('.CodeMirror').addClass('cm-s-darcula');
     for(var cm of document.getElementsByClassName('CodeMirror')) {
       cm.classList.add('cm-s-darcula')
     }
-    //$('body').addClass('dark-mode');
     window.document.body.classList.add('dark-mode')
-    //$('.logo').children('img').attr("src", "web/banner-dark.svg");
     for(var logo of window.document.getElementsByClassName('logo')) {
       for(var img of logo.getElementsByTagName('img')) {
          img.setAttribute("src", "web/banner-dark.svg")
@@ -435,26 +427,20 @@ export function setPreferredColorScheme() {
 
 function switchTheme(themeToggleEvent) {
   if (themeToggleEvent.target.checked) {
-    //$('.CodeMirror').addClass('cm-s-darcula');
     for(var cm of document.getElementsByClassName('CodeMirror')) {
       cm.classList.add('cm-s-darcula')
     }
-    //$('body').addClass('dark-mode');
     window.document.body.classList.add('dark-mode')
-    //$('.logo').children('img').attr("src", "web/banner-dark.svg");
     for(var logo of document.getElementsByClassName('logo')) {
       for(var img of logo.getElementsByTagName('img')) {
          img.setAttribute("src", "web/banner-dark.svg")
       }
     }
   } else {
-    //$('.CodeMirror').removeClass('cm-s-darcula');
     for(var cm of document.getElementsByClassName('CodeMirror')) {
       cm.classList.remove('cm-s-darcula')
     }
-    //$('body').removeClass('dark-mode');
     window.document.body.classList.remove('dark-mode')
-    //$('.logo').children('img').attr("src", "web/banner-light.svg");
     for(var logo of document.getElementsByClassName('logo')) {
       for(var img of logo.getElementsByTagName('img')) {
          img.setAttribute("src", "web/banner-light.svg")
