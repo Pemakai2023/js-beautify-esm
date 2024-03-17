@@ -1,0 +1,18 @@
+﻿<script type="module">
+//import cm from './codemirror.js'
+//import * as mode from './modes.js'
+//console.log(mode)
+import { javascript } from '@codemirror/lang-javascript'
+import { basicSetup, EditorView } from 'codemirror'
+const initialText = 'console.log("hello, world")'
+const targetElement = document.querySelector('#editor')!
+new EditorView({
+  doc: initialText,
+  extensions: [
+    basicSetup,
+    javascript(),
+  ],
+  parent: targetElement,
+})
+</script>
+<div id = "editor"></div>
