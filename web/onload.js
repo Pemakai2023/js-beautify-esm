@@ -1,6 +1,6 @@
 /*jshint node:false, jquery:true, strict:false */
 
-import packages from '../package.json' assert {type:'json'}
+import packages from '../package.json' with {type:'json'}
 
 import {
   the,
