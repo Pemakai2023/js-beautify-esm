@@ -12,7 +12,7 @@ import { run_javascript_tests } from '../js/test/generated/beautify-javascript-t
 import { run_css_tests } from '../js/test/generated/beautify-css-tests.js'
 import { run_html_tests } from '../js/test/generated/beautify-html-tests.js'
 
-import common_style_css from './common-style.css' assert {type:'css'}
+import common_style_css from './common-style.css' with {type:'css'}
 window.document.adoptedStyleSheets = [common_style_css];
 
 export function getElm(attr, name){
